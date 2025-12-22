@@ -43,12 +43,14 @@ body {
     background: var(--bg-dark);
 }
 
-.container {
-    background: var(--bg);
-    padding: 20px;
+.title {
+    color: var(--text);
 }
 
 .nav {
+    background: var(--bg);
+    box-shadow: var(--shadow-s);
+    padding: 20px;
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -94,8 +96,23 @@ h1 {
     cursor: pointer;
 }
 
+.global-message {
+    display: flex;
+    justify-content: center;
+}
+
+.global-message p {
+    margin-top: 20px;
+    padding: 40px;
+    font-size: 1.05rem;
+    border-radius: 8px;
+    background: var(--bg);
+    box-shadow: var(--shadow-s);
+    color: var(--text-muted);
+}
+
 dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 #book-modal {
@@ -104,7 +121,7 @@ dialog::backdrop {
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: absolute;
-    top: 50%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
