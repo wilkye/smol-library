@@ -61,7 +61,19 @@ h1 {
 .buttons {
     display: grid;
     grid-auto-flow: column;
+    align-items: center;
     gap: 15px;
+}
+
+.theme-toggle {
+    background: var(--bg-light);
+    color: var(--text-muted);
+    box-shadow: var(--shadow-s);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 1.2rem;
+    line-height: 0;
 }
 
 .modal-btn,
@@ -76,7 +88,8 @@ h1 {
 }
 
 .modal-btn:hover,
-.mode-change:hover {
+.mode-change:hover,
+.theme-toggle:hover {
     box-shadow: var(--shadow-l);
     cursor: pointer;
 }
