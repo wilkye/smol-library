@@ -8,9 +8,17 @@
     <title>My Smol Library</title>
 </head>
 
-<body>
+<body class="light" id="body">
 
-    <button id="open-modal-btn">Open Modal</button>
+    <div class="container">
+        <div class="nav">
+            <h1 class="title">SMOL LIBRARY</h1>
+            <div class="buttons">
+                <button class="mode-change" id="ld"><img src="imgs/dark-mode.svg" alt="Dark mode toggle"></button>
+                <button class="modal-btn" id="open-modal-btn">Add a Book</button>
+            </div>
+        </div>
+    </div>
 
     <dialog id="book-modal">
         <h2>Add a Book!</h2>

@@ -1,8 +1,12 @@
 const myLibrary = [];
 
+const body = document.getElementById("body");
+
 const modal = document.getElementById("book-modal");
 const openBtn = document.getElementById("open-modal-btn");
 const closeBtn = document.getElementById("close-modal-btn");
+
+const modeBtn = document.getElementById("ld");
 
 openBtn.addEventListener('click', () => {
     modal.showModal();
@@ -10,6 +14,11 @@ openBtn.addEventListener('click', () => {
 
 closeBtn.addEventListener('click', () => {
     modal.close();
+});
+
+modeBtn.addEventListener('click', () => {
+    body.classList.toggle("light");
+    console.log("Test");
 });
 
 function Book(title, author, pageNums, hasRead) {
