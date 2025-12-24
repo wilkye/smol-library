@@ -60,6 +60,14 @@ h1 {
     color: var(--text);
 }
 
+h2 {
+    color: var(--text);
+}
+
+p {
+    color: var(--text-muted);
+}
+
 .buttons {
     display: grid;
     grid-auto-flow: column;
@@ -124,4 +132,8 @@ dialog::backdrop {
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.content {
+    display: grid;
 }

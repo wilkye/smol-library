@@ -16,23 +16,11 @@
                 <h1 class="title">SMOL LIBRARY</h1>
             </div>
             <div class="buttons">
-                <button
-                    class="theme-toggle"
-                    id="ld"
-                    type="button"
-                    title="Toggle theme"
-                    aria-label="Toggle theme"
-                    >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                        width="1em"
-                        height="1em"
-                        class="theme-toggle__dark-side"
-                        fill="currentColor"
-                        viewBox="0 0 32 32"
-                    >
-                        <path d="M16 .5C7.4.5.5 7.4.5 16S7.4 31.5 16 31.5 31.5 24.6 31.5 16 24.6.5 16 .5zm0 28.1V3.4C23 3.4 28.6 9 28.6 16S23 28.6 16 28.6z" />
+                <button class="theme-toggle" id="ld" type="button" title="Toggle theme" aria-label="Toggle theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="1em" height="1em"
+                        class="theme-toggle__dark-side" fill="currentColor" viewBox="0 0 32 32">
+                        <path
+                            d="M16 .5C7.4.5.5 7.4.5 16S7.4 31.5 16 31.5 31.5 24.6 31.5 16 24.6.5 16 .5zm0 28.1V3.4C23 3.4 28.6 9 28.6 16S23 28.6 16 28.6z" />
                     </svg>
                 </button>
                 <button class="modal-btn" id="open-modal-btn">Add a Book</button>
@@ -45,9 +33,23 @@
     </div>
 
     <dialog id="book-modal">
-        <h2>Add a Book!</h2>
-        <p>Some text in the modal content.</p>
-        <button id="close-modal-btn">Close</button>
+        <div class="content">
+            <h2>Add a Book!</h2>
+            <form action="/">
+                <label for="book-name">Book Name:</label>
+                <input type="text" id="book-name" name="book-name" placeholder="Atomic Habits">
+
+                <label for="book-author">Book Author:</label>
+                <input type="text" id="book-author" name="book-author" placeholder="James Clear">
+
+                <label for="pages"># of Pages:</label>
+                <input type="number" id="pages" name="pages" placeholder="227">
+
+                <label for="has-read">Have you read it?</label>
+                <input type="checkbox" id="has-read" name="has-read">
+            </form>
+            <button id="close-modal-btn">Cancel</button>
+        </div>
     </dialog>
 
     <script src="script.js"></script>
