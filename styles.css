@@ -131,9 +131,27 @@ dialog::backdrop {
     position: absolute;
     top: 10%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -25%);
 }
 
 .content {
     display: grid;
+    gap: 15px;
+}
+
+.book-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+label {
+    font-size: .8rem;
+}
+
+.sub-btn {
+    color: var(--text);
+    background: var(--primary);
+    border: none;
+    border-radius: 8px;
 }
