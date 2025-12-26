@@ -119,6 +119,10 @@ p {
     color: var(--text-muted);
 }
 
+dialog {
+    background-color: var(--bg);
+}
+
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.2);
 }
@@ -146,6 +150,7 @@ dialog::backdrop {
 }
 
 label {
+    color: var(--text);
     font-size: .8rem;
 }
 
