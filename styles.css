@@ -130,7 +130,7 @@ dialog::backdrop {
 #book-modal {
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: absolute;
     top: 10%;
@@ -151,7 +151,30 @@ dialog::backdrop {
 
 label {
     color: var(--text);
-    font-size: .8rem;
+    font-size: 1.1rem;
+}
+
+input {
+    background: var(--bg-light);
+    box-shadow: var(--shadow-s);
+    border: none;
+    border-radius: 8px;
+    height: 2em;
+    padding: .1em .4em;
+    outline: none;
+}
+
+.section {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.sub-btn,
+.can-btn {
+    padding: 10px 5px;
+    font-size: 1.1rem;
 }
 
 .sub-btn {
@@ -159,4 +182,19 @@ label {
     background: var(--primary);
     border: none;
     border-radius: 8px;
+    box-shadow: var(--shadow-s);
+}
+
+.can-btn {
+    color: var(--text);
+    background: var(--bg-light);
+    border: none;
+    border-radius: 8px;
+    box-shadow: var(--shadow-s);
+}
+
+.sub-btn:hover,
+.can-btn:hover {
+    box-shadow: var(--shadow-m);
+    cursor: pointer;
 }
