@@ -39,5 +39,24 @@ function addBookToLibrary() {
     console.log(crypto.randomUUID());
 }
 
+function createNewBookCard() {
+    let container = document.createElement("div");
+    container.classList.add("book-container");
+    let bookTitle = document.createElement("h2");
+    bookTitle.classList.add("book-title");
+    let bookAuthor = document.createElement("h3");
+    bookAuthor.classList.add("book-author");
+    let bookPages = document.createElement("p");
+    bookPages.classList.add("book-pages");
+    let readBool = document.createElement("p");
+    readBool.classList.add("read-bool");
+
+    container.textContent = "";
+    bookTitle.textContent = "";
+    bookAuthor.textContent = "";
+    bookPages.textContent = "";
+    readBool.textContent = "";
+}
+
 
 addBookToLibrary();
