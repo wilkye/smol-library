@@ -39,7 +39,7 @@ function addBookToLibrary() {
     console.log(crypto.randomUUID());
 }
 
-function createNewBookCard() {
+function createNewBookCard(book) {
     let container = document.createElement("div");
     container.classList.add("book-container");
     let bookTitle = document.createElement("h2");
@@ -51,11 +51,10 @@ function createNewBookCard() {
     let readBool = document.createElement("p");
     readBool.classList.add("read-bool");
 
-    container.textContent = "";
-    bookTitle.textContent = "";
-    bookAuthor.textContent = "";
-    bookPages.textContent = "";
-    readBool.textContent = "";
+    bookTitle.textContent = book.title;
+    bookAuthor.textContent = book.author;
+    bookPages.textContent = book.pageNums;
+    readBool.textContent = book.hasRead;
 }
 
 
