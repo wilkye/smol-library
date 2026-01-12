@@ -6,6 +6,8 @@ const modal = document.getElementById("book-modal");
 const openBtn = document.getElementById("open-modal-btn");
 const closeBtn = document.getElementById("close-modal-btn");
 
+const bookForm = document.getElementById("book-form");
+
 const modeBtn = document.getElementById("ld");
 
 openBtn.addEventListener('click', () => {
@@ -20,6 +22,22 @@ modeBtn.addEventListener('click', () => {
     body.classList.toggle("light");
     console.log("Test");
 });
+
+bookForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(bookForm);
+
+    const title = formData.get("book-name");
+    const author = formData.get("book-author");
+    const pageNums = Number(formData.get("pages"));
+    const hasRead = formData.get("has-read") === "on";
+
+    addBookToLibrary(title, author, pageNums, hasRead);
+
+    bookForm.reset();
+    modal.close();
+})
 
 function Book(title, author, pageNums, hasRead) {
     if (!new.target) {
