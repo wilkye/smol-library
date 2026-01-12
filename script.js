@@ -48,13 +48,17 @@ function Book(title, author, pageNums, hasRead) {
     this.pageNums = pageNums;
     this.hasRead = hasRead;
     this.info = function () {
-        return `${title} by ${author}, ${pageNum} pages, has been read: ${hasRead}`;
+        return `${title} by ${author}, ${pageNums} pages, has been read: ${hasRead}`;
     }
 }
 
-function addBookToLibrary() {
-    // take params, create a book then store it in the array
-    console.log(crypto.randomUUID());
+function addBookToLibrary(title, author, pageNums, hasRead) {
+    const newBook = new Book(title, author, pageNums, hasRead);
+    myLibrary.push(newBook);
+
+    createNewBookCard(newBook);
+
+    console.log(myLibrary);
 }
 
 function createNewBookCard(book) {
@@ -73,6 +77,9 @@ function createNewBookCard(book) {
     bookAuthor.textContent = book.author;
     bookPages.textContent = book.pageNums;
     readBool.textContent = book.hasRead;
+
+    container.append(bookTitle, bookAuthor, bookPages, readBool);
+    document.querySelector(".container").append(container);
 }
 
 
