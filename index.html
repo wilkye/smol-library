@@ -26,10 +26,7 @@
                 <button class="modal-btn" id="open-modal-btn">Add a Book</button>
             </div>
         </div>
-
-        <div class="global-message">
-            <p>You don't have any books yet... Add one?</p>
-        </div>
+        <div class="global-message" id="book-warn"></div>
     </div>
 
     <dialog id="book-modal">
@@ -53,8 +50,8 @@
                         <label for="has-read">Have you read it?</label>
                         <input type="checkbox" id="has-read" name="has-read">
                     </div>
-                    <button class="sub-btn" type="submit">Add Book</button>
                     <button class="can-btn" type="button" id="close-modal-btn">Cancel</button>
+                    <button class="sub-btn" type="submit">Add Book</button>
                 </div>
             </form>
         </div>

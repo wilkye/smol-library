@@ -1,6 +1,7 @@
 const myLibrary = [];
 
 const body = document.getElementById("body");
+const globalMess = document.getElementById("book-warn");
 
 const modal = document.getElementById("book-modal");
 const openBtn = document.getElementById("open-modal-btn");
@@ -22,6 +23,16 @@ modeBtn.addEventListener('click', () => {
     body.classList.toggle("light");
     console.log("Test");
 });
+
+function displayBooks() {
+    globalMess.innerHTML = "";
+
+    if (myLibrary.length === 0) {
+        globalMess.innerHTML =
+            `<p>You don't have any books yet... Add one?</p>`;
+        return;
+    }
+}
 
 bookForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -57,6 +68,7 @@ function addBookToLibrary(title, author, pageNums, hasRead) {
     myLibrary.push(newBook);
 
     createNewBookCard(newBook);
+    displayBooks();
 
     console.log(myLibrary);
 }
@@ -82,5 +94,5 @@ function createNewBookCard(book) {
     document.querySelector(".container").append(container);
 }
 
-
+displayBooks();
 addBookToLibrary();
