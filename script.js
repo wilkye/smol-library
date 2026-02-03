@@ -54,6 +54,7 @@ function Book(title, author, pageNums, hasRead) {
     if (!new.target) {
         throw Error("You must use the 'new' keyword to call.");
     }
+    this.id = crypto.randomUUID();
     this.title = title;
     this.author = author;
     this.pageNums = pageNums;
@@ -91,8 +92,10 @@ function createNewBookCard(book) {
     readBool.textContent = book.hasRead;
 
     container.append(bookTitle, bookAuthor, bookPages, readBool);
-    document.querySelector(".container").append(container);
+    document.querySelector(".books").append(container);
 }
 
 displayBooks();
-addBookToLibrary();
+addBookToLibrary("Atomic Habits", "James Clear", 257, true);
+addBookToLibrary("Atomic Habits", "James Clear", 257, true);
+addBookToLibrary("Atomic Habits", "James Clear", 257, true);
