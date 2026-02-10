@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 const body = document.getElementById("body");
 const globalMess = document.getElementById("book-warn");
@@ -77,6 +77,7 @@ function addBookToLibrary(title, author, pageNums, hasRead) {
 function createNewBookCard(book) {
     let container = document.createElement("div");
     container.classList.add("book-container");
+    container.dataset.id = book.id;
     let bookTitle = document.createElement("h2");
     bookTitle.classList.add("book-title");
     let bookAuthor = document.createElement("h3");
@@ -85,17 +86,27 @@ function createNewBookCard(book) {
     bookPages.classList.add("book-pages");
     let readBool = document.createElement("p");
     readBool.classList.add("read-bool");
+    let deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
 
     bookTitle.textContent = book.title;
     bookAuthor.textContent = book.author;
     bookPages.textContent = book.pageNums;
     readBool.textContent = book.hasRead;
 
-    container.append(bookTitle, bookAuthor, bookPages, readBool);
+    deleteBtn.addEventListener("click", () => {
+        myLibrary = myLibrary.filter(b => b.id !== book.id);
+        container.remove();
+        displayBooks();
+    })
+
+    container.append(bookTitle, bookAuthor, bookPages, readBool, deleteBtn);
     document.querySelector(".books").append(container);
 }
 
 displayBooks();
+
+addBookToLibrary("Atomic Habits", "James Clear", 257, true);
 addBookToLibrary("Atomic Habits", "James Clear", 257, true);
 addBookToLibrary("Atomic Habits", "James Clear", 257, true);
 addBookToLibrary("Atomic Habits", "James Clear", 257, true);
