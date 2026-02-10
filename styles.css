@@ -212,9 +212,9 @@ input {
 }
 
 .book-container {
-    background-color: #f0f0f0;
+    background-color: var(--bg);
     padding: 20px;
-    border: 1px solid #ccc;
+    box-shadow: var(--shadow-m);
     border-radius: 8px;
     text-align: center;
 }

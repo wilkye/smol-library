@@ -86,13 +86,22 @@ function createNewBookCard(book) {
     bookPages.classList.add("book-pages");
     let readBool = document.createElement("p");
     readBool.classList.add("read-bool");
+    let readBtn = document.createElement("button");
+    readBtn.textContent = "Toggle Read";
     let deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
 
     bookTitle.textContent = book.title;
     bookAuthor.textContent = book.author;
-    bookPages.textContent = book.pageNums;
-    readBool.textContent = book.hasRead;
+    bookPages.textContent = `${book.pageNums} pages`;
+
+    if (book.hasRead) {
+        readBool.textContent = "Has read";
+        readBool.style.color = "green";
+    } else {
+        readBool.textContent = "Has not read";
+        readBool.style.color = "red";
+    }
 
     deleteBtn.addEventListener("click", () => {
         myLibrary = myLibrary.filter(b => b.id !== book.id);
@@ -100,13 +109,24 @@ function createNewBookCard(book) {
         displayBooks();
     })
 
-    container.append(bookTitle, bookAuthor, bookPages, readBool, deleteBtn);
+    readBtn.addEventListener("click", () => {
+        book.hasRead = !book.hasRead;
+        if (book.hasRead) {
+            readBool.textContent = "Has read";
+            readBool.style.color = "green";
+        } else {
+            readBool.textContent = "Has not read";
+            readBool.style.color = "red";
+        }
+    })
+
+    container.append(bookTitle, bookAuthor, bookPages, readBool, readBtn, deleteBtn);
     document.querySelector(".books").append(container);
 }
 
 displayBooks();
 
 addBookToLibrary("Atomic Habits", "James Clear", 257, true);
-addBookToLibrary("Atomic Habits", "James Clear", 257, true);
+addBookToLibrary("Atomic Habits", "James Clear", 257, false);
 addBookToLibrary("Atomic Habits", "James Clear", 257, true);
 addBookToLibrary("Atomic Habits", "James Clear", 257, true);
