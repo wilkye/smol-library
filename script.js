@@ -86,10 +86,16 @@ function createNewBookCard(book) {
     bookPages.classList.add("book-pages");
     let readBool = document.createElement("p");
     readBool.classList.add("read-bool");
+
+    let actions = document.createElement("div");
+    actions.classList.add("book-actions");
     let readBtn = document.createElement("button");
     readBtn.textContent = "Toggle Read";
     let deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
+
+    readBtn.classList.add("book-btn", "primary");
+    deleteBtn.classList.add("book-btn", "danger");
 
     bookTitle.textContent = book.title;
     bookAuthor.textContent = book.author;
@@ -120,7 +126,8 @@ function createNewBookCard(book) {
         }
     })
 
-    container.append(bookTitle, bookAuthor, bookPages, readBool, readBtn, deleteBtn);
+    actions.append(readBtn, deleteBtn);
+    container.append(bookTitle, bookAuthor, bookPages, readBool, actions);
     document.querySelector(".books").append(container);
 }
 
